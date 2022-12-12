@@ -10,18 +10,18 @@ export const useUserStore = defineStore("user", {
       const user = await supabase.auth.user();
       if (user) {
         this.user = user;
-        /* const { data: profile } = await supabase
-        .from('profiles')
-        .select()
-        .match({ user_id: this.user.id })
+        const { data: profile } = await supabase
+          .from("userProfile")
+          .select()
+          .match({ user_id: this.user.id });
 
         if (profile) this.profile = profile[0];
-        console.log('user in store: ', this.user);
-        console.log('profile in store: ', this.profile); */
+        console.log("user in store: ", this.user);
+        console.log("profile in store: ", this.profile);
       }
     },
 
-    async signUp(email, password) {
+    async signUp(email, password, username) {
       const { user, error } = await supabase.auth.signUp({
         email: email,
         password: password,
@@ -29,14 +29,14 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        /* console.log(this.user);
-
-        const { data: profile } = await supabase.from('profiles').insert([
+        console.log(this.user);
+        const { data: profile } = await supabase.from("userProfile").insert([
           {
             user_id: this.user.id,
-            username: email
-          }
-        ]) */
+            username: username,
+            email: email,
+          },
+        ]);
       }
     },
 
@@ -54,7 +54,7 @@ export const useUserStore = defineStore("user", {
       if (user) {
         this.user = user;
         const { data: profile } = await supabase
-          .from("profiles")
+          .from("userProfile")
           .select()
           .match({ user_id: this.user.id });
 

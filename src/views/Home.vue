@@ -4,7 +4,7 @@
 
     <div class="content">
       <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
+      <router-link to="/account">{{ getUser.email }}</router-link>
     </div>
     <NewTask @getTasks="getTasks" />
     <h2 class="titulo-tasks-contenedor">Here your taks list:</h2>
@@ -17,21 +17,27 @@
       :task="task"
     />
   </div>
-  <footer></footer>
   <div>
-    <Footer />
+    <FooterVue />
   </div>
 </template>
 <!-- creamos un task item por cada tarea que tengamos en el array tareas. -->
 
 <script setup>
 import { ref } from "vue";
+import { useUserStore } from "../stores/user";
 import { useTaskStore } from "../stores/task";
 import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
-import footer from "../components/footer.vue";
+import FooterVue from "../components/Footer.vue";
+
+// const getUser = computed(() => useUserStore().user);
+const getUser = useUserStore().user;
+
+// constant that calls user email from the useUSerStore
+const userEmail = getUser.email;
 
 const taskStore = useTaskStore();
 

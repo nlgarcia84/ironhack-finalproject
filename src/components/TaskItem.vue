@@ -19,8 +19,18 @@
       </div>
 
       <div v-show="editTask">
-        <input type="text" placeholder="Title" v-model="name" />
-        <input type="text" placeholder="Description" v-model="description" />
+        <input
+          class="edit-title"
+          type="text"
+          placeholder="Title"
+          v-model="name"
+        />
+        <input
+          class="edit-description"
+          type="text"
+          placeholder="Description"
+          v-model="description"
+        />
         <button @click="updateTask">Save</button>
       </div>
 

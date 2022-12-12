@@ -1,6 +1,5 @@
 <template>
   <Nav />
-  <h1>Name: {{ username }}</h1>
   <img
     :src="
       avatar_url
@@ -9,25 +8,28 @@
     "
     alt="Profile picture"
   />
+  <h1>Name: {{ username }}</h1>
+
+  <button @click="" class="button-edit-profile">Edit your Profile</button>
 </template>
 
 <script setup>
 import { supabase } from "../supabase";
 import { onMounted, reactive, ref, toRefs } from "vue";
-import { useProfilesStore } from "../stores/profiles";
-import Nav from "../components/Nav.vue";
 import { useUserStore } from "../stores/user";
+import Nav from "../components/Nav.vue";
 
-const profileStore = useProfilesStore();
+const userStore = useUserStore();
 
 // Variable para guardar el perfil de supabase
-const profile = ref({});
+const profile = ref("pepito");
 const username = ref(null);
 const avatar_url = ref(null);
 
 // PREFILE
 const getProfile = async () => {
-  profile.value = await profileStore.fetchProfile();
+  await userStore.fetchUser();
+  profile.value = userStore.profile;
   username.value = profile.value.username;
 };
 getProfile();

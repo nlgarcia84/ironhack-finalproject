@@ -9,18 +9,17 @@ export const useProfilesStore = defineStore("profiles", {
   actions: {
     async fetchProfile() {
       const { data: profile } = await supabase
-        .from("profiles")
+        .from("profile")
         .select("*")
         .match({ user_id: useUserStore().user.id });
-      if (profile) this.profile = profile;
-      console.log(this.profile[0]);
-      return this.profile[0];
+      if (profile) this.profile = profile[0];
+      console.log(this.profile);
+      return this.profile;
     },
 
     async changeProfiles(username, avatar_url, id) {
-      console.log("¿Qué haces llamándome? Te reviento");
       const { data, error } = await supabase
-        .from("perfiles")
+        .from("profile")
         .update({
           username: username,
           avatar_url: avatar_url,

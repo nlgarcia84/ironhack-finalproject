@@ -75,7 +75,7 @@ const buttonText = "Sign Up";
 
 const email = ref("");
 const password = ref("");
-
+const errorMsg = ref("");
 const redirect = useRouter();
 
 async function signIn() {

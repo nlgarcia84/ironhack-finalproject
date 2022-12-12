@@ -16,6 +16,10 @@ const getUser = useUserStore().user;
 // constant that calls user email from the useUSerStore
 const userEmail = getUser.email;
 
+// constant that calls user name from useUserStore
+//const userName = getUser.username;
+//console.log(userName);
+
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 
@@ -62,7 +66,7 @@ let clickSound = () => new Audio("src/sound/clicksoundeffect.mp3").play();
     <div>
       <ul class="barra-nav-der">
         <li class="log-out-welcome">
-          <p>Welcome, user</p>
+          <p>Welcome, {{ getUser.email }}</p>
         </li>
         <li>
           <button @click="signOut" class="button-logout">Log out</button>

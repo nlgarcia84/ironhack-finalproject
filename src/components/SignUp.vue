@@ -21,6 +21,28 @@
           />
         </div>
         <div class="form-input">
+          <label class="input-field-label">Username</label>
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Your Username"
+            id="username"
+            v-model="username"
+            required
+          />
+        </div>
+        <!-- <div class="form-input">
+          <label class="input-field-label">avatar</label>
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Your Avatar"
+            id="avatar_url"
+            v-model="avatar_url"
+            required
+          /> -->
+        <!-- </div> -->
+        <div class="form-input">
           <label class="input-field-label">Password</label>
           <input
             type="password"
@@ -73,6 +95,8 @@ const buttonText = "Sign In";
 // Input Fields
 const email = ref("");
 const password = ref("");
+const username = ref("");
+
 const confirmPassword = ref("");
 
 // Error Message
@@ -86,7 +110,7 @@ const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
       // calls the user store and send the users info to backend to logIn
-      await useUserStore().signUp(email.value, password.value);
+      await useUserStore().signUp(email.value, password.value, username.value);
       // redirects user to the homeView
       redirect.push({ path: "/auth/login" });
     } catch (error) {
@@ -99,7 +123,6 @@ const signUp = async () => {
     }
     return;
   }
-  errorMsg.value = "error";
 };
 
 let click2 = () => new Audio("src/sound/click2.mp3").play();
