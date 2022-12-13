@@ -406,7 +406,7 @@ input {
   font-size: 20px;
   background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
   padding: 1rem;
-  margin: 0.5rem 0rem;
+  margin: 0.5rem 0.5rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   box-shadow: 0 0 15px rgb(18, 18, 18);
@@ -724,6 +724,9 @@ input:checked + .deslizadora:before {
     );
   }
 
+  nav {
+    padding: 0 5rem;
+  }
   .barra-nav-der {
     display: flex;
     flex-direction: row;
