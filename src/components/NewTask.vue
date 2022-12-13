@@ -1,5 +1,5 @@
 <template>
-  <h1 class="titulo-nueva-task">Please introduce a new task</h1>
+  <h1 class="titulo-nueva-task">Please introduce your task:</h1>
   <div v-if="showErrorMessage">
     <p class="error-text">{{ errorMessage }}</p>
   </div>
@@ -7,7 +7,7 @@
     <div class="input-field">
       <input
         type="text"
-        placeholder="Add a your task here"
+        placeholder="Task title"
         v-model="name"
         @click="click2()"
       />
@@ -15,7 +15,7 @@
     <div class="input-field">
       <input
         type="text"
-        placeholder="Add a description here"
+        placeholder="Task description"
         v-model="description"
         @click="click2()"
       />

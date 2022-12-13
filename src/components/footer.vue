@@ -6,12 +6,12 @@
 
 <script setup>
 import { ref } from "vue";
-import { useProfilesStore } from "../stores/profiles";
+// import { useProfilesStore } from "../stores/profiles";
 
-const profileStore = useProfilesStore();
+// const profileStore = useProfilesStore();
 
 //Minor changes
-console.log(profileStore.fetchProfile());
+// console.log(profileStore.fetchProfile());
 </script>
 
 <style></style>

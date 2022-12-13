@@ -38,6 +38,8 @@ body {
     rgba(18, 155, 231, 1) 100%,
     rgba(90, 227, 255, 1) 100%
   );
+  margin: 0;
+  padding: 0;
 }
 
 .btn-34:active,
@@ -412,7 +414,8 @@ input {
 
 .content h3 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -433,6 +436,7 @@ input {
 .container-title-description h4 {
   text-transform: capitalize;
   font-size: 1.2rem;
+  text-align: center;
 }
 /* ESTILOS DEL INTERRUPTOR COMPLETADO-NOCOMPLETADO */
 
@@ -625,42 +629,74 @@ input:checked + .deslizadora:before {
 }
 
 .buttonAddTask {
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  border: 0;
-  background-color: #f72585;
+  background-image: linear-gradient(
+    to right,
+    #00c6ff 0%,
+    #0072ff 51%,
+    #00c6ff 100%
+  );
+  margin: 50px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
   color: white;
-  height: 1.5rem;
-  border-radius: 0.5rem;
-  margin: 4rem 1rem;
-  padding: 2rem 3rem;
-  box-shadow: 0 0 15px rgb(18, 18, 18);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.buttonAddTask:active,
-.buttonAddTask:focus {
-  transform: translateY(2px);
-  box-shadow: 0 0 0;
-  outline: 0;
+.buttonAddTask:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  background: #000000;
-  width: 100%;
-  min-height: 5%;
-  display: flex;
-  position: absolute;
-  margin: 30px 0 0 -10px;
-  padding: 10px;
+  bottom: 0;
+  width: 100vw;
+  height: 7vh;
+  background-color: black;
   color: white;
+  text-align: center;
 }
+
 /* Account View */
+.top-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.email-input {
+  padding: 0.5rem 2rem;
+}
+
+.username-input {
+  padding: 0.5rem 2rem;
+}
+
+.boton-actualizar-datos {
+  margin: 1rem 0;
+  border: 0;
+  background-color: #f72585;
+  color: white;
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
 
 /************************************ A PARTIR DE AQUÍ TABLET ***********/
 
@@ -685,6 +721,9 @@ input:checked + .deslizadora:before {
     list-style: none;
   }
 
+  .barra-nav-der p {
+    padding: 0 1rem;
+  }
   .contenedor-todo {
     margin: 10rem 5rem;
   }
@@ -717,6 +756,46 @@ input:checked + .deslizadora:before {
   }
 }
 
+.account-top {
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.account-top h1 {
+  color: white;
+  padding: 1rem;
+}
+
+.formEditData h3 {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.form-widget {
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 15px rgb(18, 18, 18);
+}
+
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.usernameForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Sig
 /* SignIn Component */
 
@@ -742,8 +821,30 @@ input:checked + .deslizadora:before {
     display: none;
   }
 
+  .form-widget {
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 10rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+  }
+
   .barra-nav-izq {
     display: flex;
+  }
+
+  .barra-nav-der {
+    padding: 0 1rem;
+  }
+
+  .barra-nav-der {
+    padding: 0 1rem;
   }
 
   .efecto-hover:hover {
@@ -762,8 +863,8 @@ input:checked + .deslizadora:before {
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    padding: 2rem 5rem;
-    margin: 2rem 18rem;
+    padding: 1rem 1rem;
+    margin: 2rem 0rem;
     background-color: white;
     border-radius: 5%;
     box-shadow: 0 0 15px rgb(18, 18, 18);
@@ -771,11 +872,17 @@ input:checked + .deslizadora:before {
   }
   .contenedor-todo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     align-content: center;
     margin: 5rem 5rem;
+  }
+
+  .tareas-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .container {

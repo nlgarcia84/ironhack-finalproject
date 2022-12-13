@@ -1,16 +1,41 @@
 <template>
   <Nav />
-  <img
-    :src="
-      avatar_url
-        ? avatar_url
-        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-    "
-    alt="Profile picture"
-  />
-  <h1>Name: {{ username }}</h1>
+  <div class="top-form">
+    <form class="form-widget upload-avatar" @submit.prevent="updateProfile">
+      <!-- Add to body -->
+      <Avatar v-model:path="avatar_url" size="10" />
 
-  <button @click="" class="button-edit-profile">Edit your Profile</button>
+      <!-- Other form elements -->
+    </form>
+    <h1>
+      Name:
+      {{ useUserStore().profile ? useUserStore().profile.username : "user" }}
+    </h1>
+  </div>
+  <div class="formEditData">
+    <h3>You can change your data in this form:</h3>
+    <form class="form-widget" @submit.prevent="updateProfile">
+      <div class="emailForm">
+        <label for="email">New Email</label>
+        <input class="email-input" id="email" type="text" v-model="email" />
+      </div>
+      <div class="usernameForm">
+        <label for="username">New Username</label>
+        <input
+          class="username-input"
+          id="username"
+          type="text"
+          v-model="username"
+        />
+      </div>
+      <div>
+        <button type="submit" class="boton-actualizar-datos"></button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <FooterVue />
+  </div>
 </template>
 
 <script setup>
@@ -18,24 +43,68 @@ import { supabase } from "../supabase";
 import { onMounted, reactive, ref, toRefs } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
+import FooterVue from "../components/Footer.vue";
+import Avatar from "../components/Avatar.vue";
 
 const userStore = useUserStore();
 
 // Variable para guardar el perfil de supabase
-const profile = ref("pepito");
+
+const profile = ref("");
 const username = ref(null);
+const email = ref("");
 const avatar_url = ref(null);
 
 // PREFILE
-const getProfile = async () => {
-  await userStore.fetchUser();
-  profile.value = userStore.profile;
-  username.value = profile.value.username;
-};
-getProfile();
+async function getProfile() {
+  try {
+    // loading.value = true;
+    // const { user } = session.value;
+
+    let { data, error, status } = await supabase
+      .from("userProfile")
+      .select(`username, email, avatar_url`)
+      .eq("id", userStore.user.id)
+      .single();
+
+    if (error && status !== 406) throw error;
+
+    if (data) {
+      username.value = data.username;
+      email.value = data.email;
+      avatar_url.value = data.avatar_url;
+    }
+  } catch (error) {
+    alert(error.message);
+  } finally {
+    // loading.value = false;
+  }
+}
+
+async function updateProfile() {
+  try {
+    // loading.value = true;
+    // const { user } = session.value;
+
+    const updates = {
+      user_id: userStore.user.id,
+      email: email.value,
+      username: username.value,
+      avatar_url: avatar_url.value,
+    };
+
+    let { error } = await supabase.from("userProfile").upsert(updates);
+
+    if (error) throw error;
+  } catch (error) {
+    alert(error.message);
+  } finally {
+    // loading.value = false;
+  }
+}
 
 onMounted(() => {
-  //getProfile();
+  getProfile();
 });
 </script>
 

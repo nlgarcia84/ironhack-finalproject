@@ -3,7 +3,9 @@
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { supabase } from "../supabase";
+import { onMounted, reactive, ref, toRefs } from "vue";
+
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
@@ -13,8 +15,7 @@ const getUser = useUserStore().user;
 // constant that calls user email from the useUSerStore
 const userEmail = getUser.email;
 // constant that calls user name from useUserStore
-//const userName = getUser.username;
-//console.log(userName);
+
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 async function signOut() {
@@ -60,7 +61,10 @@ let clickSound = () => new Audio("src/sound/clicksoundeffect.mp3").play();
       <ul class="barra-nav-der">
         <li class="log-out-welcome">
           <p>
-            Welcome back <span class="user-bold">{{ getUser.email }}</span
+            Welcome back
+            <span class="user-bold">{{
+              useUserStore().profile ? useUserStore().profile.username : "user"
+            }}</span
             >!
           </p>
         </li>

@@ -1,23 +1,27 @@
 <template>
-  <div class="main-page">
-    <Nav />
+  <div class="wraper">
+    <div class="main-page">
+      <Nav />
 
-    <div class="content">
-      <h3>Your account:</h3>
-      <router-link to="/account">{{ getUser.email }}</router-link>
+      <div class="content">
+        <h3>Your account:</h3>
+        <router-link to="/account">{{
+          useUserStore().profile ? useUserStore().profile.username : "user"
+        }}</router-link>
+      </div>
+      <NewTask @getTasks="getTasks" />
+      <h2 class="titulo-tasks-contenedor">Here your taks list:</h2>
+      <div class="tareas-flex">
+        <TaskItem
+          @deleteTask="deleteTask"
+          @toogleTask="toogleTask"
+          @getTasks="getTasks"
+          v-for="task in tasks"
+          :key="task.id"
+          :task="task"
+        />
+      </div>
     </div>
-    <NewTask @getTasks="getTasks" />
-    <h2 class="titulo-tasks-contenedor">Here your taks list:</h2>
-    <TaskItem
-      @deleteTask="deleteTask"
-      @toogleTask="toogleTask"
-      @getTasks="getTasks"
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-    />
-  </div>
-  <div>
     <FooterVue />
   </div>
 </template>
