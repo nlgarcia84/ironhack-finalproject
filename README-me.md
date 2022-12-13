@@ -18,3 +18,15 @@ Revisamos el avance con el TA al inicio del dia y luego avanzamos con el proyect
 # JUEVES 8 DE DICIEMBRE
 
 Revisamos avances con el TA al inicio del dia y luego me pongo con el CSS. Lo dejo casi finalizado.
+
+# VIERNES 9 DE DICIEMBRE
+
+Seguimos trabajando en el CSS y los media Q.
+
+# LUNES 12 DE DICIEMBRE
+
+Comenzamos a trabajar en el bonus con el profile y perfilamos CSS.
+
+# MARTES 13 DE DICIEMBRE
+
+Finalizamos el bonus profile, comprobamos que sincroniza bien con supabase los cambios en el perfil. Falta retocar la barra del footer.
