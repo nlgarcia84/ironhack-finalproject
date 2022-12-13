@@ -669,6 +669,10 @@ input:checked + .deslizadora:before {
   text-align: center;
 }
 
+.footer p {
+  padding: 1rem;
+}
+
 /* Account View */
 .top-form {
   display: flex;
@@ -679,10 +683,17 @@ input:checked + .deslizadora:before {
 
 .email-input {
   padding: 0.5rem 2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  background-color: #f0f0f0;
 }
 
 .username-input {
   padding: 0.5rem 2rem;
+  margin: 0.5rem 0;
+
+  text-align: center;
+  background-color: #f0f0f0;
 }
 
 .boton-actualizar-datos {
@@ -796,6 +807,9 @@ input:checked + .deslizadora:before {
   align-items: center;
 }
 
+.caja-avatar {
+  padding: 0;
+}
 /* Sig
 /* SignIn Component */
 
@@ -863,8 +877,8 @@ input:checked + .deslizadora:before {
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    padding: 1rem 1rem;
-    margin: 2rem 0rem;
+    padding: 1rem 0.5rem;
+    margin: 2rem 1rem;
     background-color: white;
     border-radius: 5%;
     box-shadow: 0 0 15px rgb(18, 18, 18);
@@ -882,6 +896,7 @@ input:checked + .deslizadora:before {
   .tareas-flex {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
   }
 

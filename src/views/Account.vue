@@ -29,7 +29,7 @@
         />
       </div>
       <div>
-        <button type="submit" class="boton-actualizar-datos"></button>
+        <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
       </div>
     </form>
   </div>
