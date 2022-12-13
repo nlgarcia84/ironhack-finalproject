@@ -17,8 +17,8 @@
         <p>
           {{
             task.is_complete
-              ? "Good job! Your task is now Completed! :)"
-              : "Your task is not completed yet :("
+              ? "Good job! Task is now Completed! :)"
+              : "Not completed yet :("
           }}
         </p>
       </div>
