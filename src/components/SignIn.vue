@@ -66,23 +66,18 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "Sign Up";
-
 // Arrow function to Signin user to supaBase
-
 const email = ref("");
 const password = ref("");
 const errorMsg = ref("");
 const redirect = useRouter();
-
 async function signIn() {
   await useUserStore().signIn(email.value, password.value);
   redirect.push({ path: "/" });
 }
-
 let click2 = () => new Audio("src/sound/click2.mp3").play();
 /*
 const signIn = async () => {

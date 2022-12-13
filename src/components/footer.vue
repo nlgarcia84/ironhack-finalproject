@@ -1,6 +1,6 @@
 <template>
-  <div class="footer-class">
-    <h3 class="footer-text">Task Creator</h3>
+  <div class="footer">
+    <p>Ironhack - Final Project 2022</p>
   </div>
 </template>
 

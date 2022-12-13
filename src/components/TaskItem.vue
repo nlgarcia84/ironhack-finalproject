@@ -1,24 +1,29 @@
 <template>
   <div class="contenedor-todos-tasks">
     <div class="container-tasks">
-      <label class="botoncito">
-        <input type="checkbox" v-model="task.is_complete" @click="toogleTask" />
-        <span class="deslizadora"></span> </label
-      ><br />
-      <p>
-        {{
-          task.is_complete
-            ? "Good job! Your task is now Completed! :)"
-            : "Your task is not completed yet :("
-        }}
-      </p>
-
       <div class="container-title-description">
         <h3>{{ task.title }}</h3>
-        <p>{{ task.description }}</p>
+        <h4>"{{ task.description }}"</h4>
+      </div>
+      <div class="status-task">
+        <label class="botoncito">
+          <input
+            type="checkbox"
+            v-model="task.is_complete"
+            @click="toogleTask"
+          />
+          <span class="deslizadora"></span> </label
+        ><br />
+        <p>
+          {{
+            task.is_complete
+              ? "Good job! Your task is now Completed! :)"
+              : "Your task is not completed yet :("
+          }}
+        </p>
       </div>
 
-      <div v-show="editTask">
+      <div class="inputs-edits" v-show="editTask">
         <input
           class="edit-title"
           type="text"
@@ -31,7 +36,7 @@
           placeholder="Description"
           v-model="description"
         />
-        <button @click="updateTask">Save</button>
+        <button class="saveButton" @click="updateTask">Save</button>
       </div>
 
       <div class="container-delete-edit">
