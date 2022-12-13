@@ -57,35 +57,21 @@ const avatar_url = ref(null);
 
 // PREFILE
 async function getProfile() {
-  try {
-    // loading.value = true;
-    // const { user } = session.value;
+  // loading.value = true;
+  // const { user } = session.value;
 
-    let { data, error, status } = await supabase
-      .from("userProfile")
-      .select(`username, email, avatar_url`)
-      .eq("id", userStore.user.id)
-      .single();
+  await userStore.fetchUser();
 
-    if (error && status !== 406) throw error;
-
-    if (data) {
-      username.value = data.username;
-      email.value = data.email;
-      avatar_url.value = data.avatar_url;
-    }
-  } catch (error) {
-    alert(error.message);
-  } finally {
-    // loading.value = false;
-  }
+  username.value = userStore.profile.username;
+  email.value = userStore.profile.email;
+  avatar_url.value = userStore.profile.avatar_url;
 }
 
 async function updateProfile() {
   try {
     // loading.value = true;
     // const { user } = session.value;
-
+    console.log("updating profile");
     const updates = {
       user_id: userStore.user.id,
       email: email.value,
@@ -93,7 +79,12 @@ async function updateProfile() {
       avatar_url: avatar_url.value,
     };
 
-    let { error } = await supabase.from("userProfile").upsert(updates);
+    let { error } = await supabase
+      .from("userProfile")
+      .update(updates)
+      .match({ user_id: userStore.user.id });
+
+    await getProfile();
 
     if (error) throw error;
   } catch (error) {
