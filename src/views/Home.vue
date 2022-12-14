@@ -3,8 +3,8 @@
     <div class="main-page">
       <Nav />
 
-      <div class="content">
-        <h3>Your account:</h3>
+      <div class="content welcome">
+        <h3>Welcome to your task tracker</h3>
         <router-link to="/account">{{
           useUserStore().profile ? useUserStore().profile.username : "user"
         }}</router-link>

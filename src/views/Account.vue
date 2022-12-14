@@ -1,7 +1,10 @@
 <template>
   <Nav />
   <div class="top-form">
-    <form class="form-widget upload-avatar" @submit.prevent="updateProfile">
+    <form
+      class="form-widget upload-avatar transparent"
+      @submit.prevent="updateProfile"
+    >
       <!-- Add to body -->
       <Avatar v-model:path="avatar_url" size="10" />
 
@@ -32,6 +35,7 @@
         <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
       </div>
     </form>
+    <section class="min-height"></section>
   </div>
   <div>
     <FooterVue />

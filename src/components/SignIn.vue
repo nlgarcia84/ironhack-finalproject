@@ -1,62 +1,64 @@
 <template>
-  <div class="contenedor-todo">
-    <div class="container">
-      <div class="header">
-        <div class="header-description">
-          <h3 class="header-title">Log In to ToDo App</h3>
-          <p class="header-subtitle">Start organizing your tasks!</p>
+  <transition name="slide-fade">
+    <div v-if="showP" class="contenedor-todo">
+      <div class="container">
+        <div class="header">
+          <div class="header-description">
+            <h3 class="header-title">Log In</h3>
+            <p class="header-subtitle">Start organizing your tasks!</p>
+          </div>
         </div>
+
+        <form @submit.prevent="signIn" class="form-sign-in">
+          <div class="form">
+            <div class="form-input">
+              <label class="input-field-label">E-mail</label>
+              <input
+                type="email"
+                class="input-field email-input"
+                placeholder="example@gmail.com"
+                id="email"
+                v-model="email"
+                required
+              />
+            </div>
+
+            <div class="form-input">
+              <label class="input-field-label">Password</label>
+              <input
+                type="password"
+                class="input-field email-input"
+                placeholder="**********"
+                id="password"
+                v-model="password"
+                required
+              />
+            </div>
+
+            <div id="container">
+              <button class="btn-34" @click="click2()">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Sign In</span>
+              </button>
+            </div>
+
+            <div class="haveAccount">
+              Don't have an account?
+              <PersonalRouter
+                :route="route"
+                :buttonText="buttonText"
+                class="sign-up-link"
+              />
+            </div>
+          </div>
+        </form>
+        <div v-show="errorMsg">{{ errorMsg }}</div>
       </div>
-
-      <form @submit.prevent="signIn" class="form-sign-in">
-        <div class="form">
-          <div class="form-input">
-            <label class="input-field-label">E-mail</label>
-            <input
-              type="email"
-              class="input-field"
-              placeholder="example@gmail.com"
-              id="email"
-              v-model="email"
-              required
-            />
-          </div>
-
-          <div class="form-input">
-            <label class="input-field-label">Password</label>
-            <input
-              type="password"
-              class="input-field"
-              placeholder="**********"
-              id="password"
-              v-model="password"
-              required
-            />
-          </div>
-
-          <div id="container">
-            <button class="btn-34" @click="click2()">
-              <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-              </span>
-              <span class="button-text">Sign In</span>
-            </button>
-          </div>
-
-          <div class="haveAccount">
-            Don't have an account?
-            <PersonalRouter
-              :route="route"
-              :buttonText="buttonText"
-              class="sign-up-link"
-            />
-          </div>
-        </div>
-      </form>
-      <div v-show="errorMsg">{{ errorMsg }}</div>
+      <!-- <div class="imagen-lado-form"></div> -->
     </div>
-    <!-- <div class="imagen-lado-form"></div> -->
-  </div>
+  </transition>
 </template>
 
 <script setup>
@@ -93,6 +95,17 @@ const signIn = async () => {
   }
 };
 */
+
+const showP = ref(false);
+const loadComponent = () => {
+  setTimeout(() => {
+    showP.value = true;
+  }, 50);
+  console.log("hola");
+};
+loadComponent();
 </script>
 
-<style></style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap");
+</style>
