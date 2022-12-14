@@ -3,7 +3,7 @@
     <div v-if="showP" class="container">
       <div class="header">
         <div class="header-description">
-          <h3 class="header-title">Register to ToDo App</h3>
+          <h3 class="header-title">Register</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
         </div>
       </div>
@@ -65,8 +65,14 @@
               required
             />
           </div>
-          <button class="button" type="submit" @click="click2()">
+          <button class="stripe-button" type="submit" @click="click2()">
             Sign Up
+            <svg class="HoverArrow" width="12" height="12" aria-hidden="true">
+              <g fill-rule="evenodd">
+                <path class="HoverArrow__linePath" d="M0 6h8" />
+                <path class="HoverArrow__tipPath" d="m1 1 5 5-5 5" />
+              </g>
+            </svg>
           </button>
           <div class="haveAccount">
             Have an account?

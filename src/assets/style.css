@@ -135,7 +135,69 @@ body {
   padding: 1rem 4rem;
 }
 
+.stripe-button {
+  margin: 2rem;
+  font-family: Roboto Mono;
+  border: 0;
+  outline: 0;
+  background: #0a2540;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 12px 25px;
+  transition-property: background-color, opacity;
+}
+
+button svg {
+  margin-left: 8px;
+  vertical-align: auto;
+}
+
+button:hover .HoverArrow__linePath {
+  opacity: 1;
+}
+
+button:hover .HoverArrow__tipPath {
+  transform: translateX(4px);
+}
+
+.HoverArrow {
+  --arrowSpacing: 5px;
+  --arrowHoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  --arrowHoverOffset: translateX(4px);
+  --arrowTipTransform: none;
+  --arrowLineOpacity: 0;
+  position: relative;
+  top: 1px;
+  margin-left: var(--arrowSpacing);
+  stroke-width: 2px;
+  fill: none;
+  stroke: currentColor;
+}
+
+.HoverArrow__linePath {
+  --arrowSpacing: 5px;
+  --arrowHoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  --arrowHoverOffset: translateX(4px);
+  --arrowTipTransform: none;
+  --arrowLineOpacity: 0;
+  opacity: var(--arrowLineOpacity);
+  transition: opacity var(--hoverTransition, var(--arrowHoverTransition));
+}
+
+.HoverArrow__tipPath {
+  transform: none;
+  transition: transform
+    var(--hoverTransition, 250ms cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+
+button:hover .HoverArrow__linePath {
+  opacity: 1;
+}
+/* 
 .form button {
+  cursor: pointer;
   margin: 2rem 0;
   border: 0;
   background-color: #f72585;
@@ -146,11 +208,18 @@ body {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12);
-}
+} */
 
 /* form button css */
 
 /* fin form button css */
+
+.sign-up-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
 
 .input-field {
   display: flex;
@@ -184,6 +253,7 @@ body {
 }
 
 .haveAccount {
+  color: white;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
@@ -402,6 +472,7 @@ input {
 } */
 
 .barra-nav-der button {
+  cursor: pointer;
   margin: 1rem 0;
   border: 0;
   background-color: #f72585;
@@ -646,6 +717,7 @@ input:checked + .deslizadora:before {
 }
 
 .buttonDelete {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -663,6 +735,7 @@ input:checked + .deslizadora:before {
 }
 
 .buttonEdit {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -680,6 +753,7 @@ input:checked + .deslizadora:before {
 }
 
 .saveButton {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -697,22 +771,25 @@ input:checked + .deslizadora:before {
   transition: 0.5s;
 
   .saveButton:hover {
+    cursor: pointer;
     background-position: right center; /* change the direction of the change here */
   }
 }
 
 .caja-add-button {
   margin: 2rem;
+  cursor: pointer;
 }
 
 .buttonAddTask {
   background-image: linear-gradient(
     to right,
-    #f33b7b 20%,
-    #131312 61%,
-    #d8d86e 70%
+    #ff512f 0%,
+    #dd2476 51%,
+    #ff512f 100%
   );
-  margin: 20px;
+  cursor: pointer;
+  margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -722,14 +799,13 @@ input:checked + .deslizadora:before {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
-  font-weight: bold;
-  font-size: 1rem;
 }
 
 .buttonAddTask:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .wrapper {

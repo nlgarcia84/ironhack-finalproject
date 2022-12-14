@@ -36,11 +36,19 @@
             </div>
 
             <div id="container">
-              <button class="btn-34" @click="click2()">
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Sign In</span>
+              <button class="stripe-button" @click="click2()">
+                Sign In
+                <svg
+                  class="HoverArrow"
+                  width="12"
+                  height="12"
+                  aria-hidden="true"
+                >
+                  <g fill-rule="evenodd">
+                    <path class="HoverArrow__linePath" d="M0 6h8" />
+                    <path class="HoverArrow__tipPath" d="m1 1 5 5-5 5" />
+                  </g>
+                </svg>
               </button>
             </div>
 
