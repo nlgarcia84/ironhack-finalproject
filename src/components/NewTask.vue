@@ -19,9 +19,9 @@
         v-model="description"
         @click="click2()"
       />
-      <button @click="addTask" class="buttonAddTask">
-        Click to add a new task
-      </button>
+      <div class="caja-add-button">
+        <button @click="addTask" class="buttonAddTask">Add</button>
+      </div>
     </div>
   </div>
 </template>
