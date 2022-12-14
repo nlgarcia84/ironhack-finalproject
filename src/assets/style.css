@@ -57,6 +57,11 @@ body {
 /* SignIn Component */
 
 /* SignUp Component */
+.avatar-image {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgb(11, 11, 11);
+}
 
 .welcome {
   padding: 1rem 0;
@@ -127,7 +132,7 @@ body {
 }
 
 .email-input {
-  box-shadow: 0 0 50px rgb(68, 68, 68);
+  padding: 1rem 4rem;
 }
 
 .form button {
@@ -703,9 +708,9 @@ input:checked + .deslizadora:before {
 .buttonAddTask {
   background-image: linear-gradient(
     to right,
-    #00c6ff 0%,
-    #0072ff 51%,
-    #00c6ff 100%
+    #f33b7b 20%,
+    #131312 61%,
+    #d8d86e 70%
   );
   margin: 20px;
   padding: 15px 45px;
@@ -755,17 +760,24 @@ input:checked + .deslizadora:before {
   flex-direction: column;
   color: white;
   text-align: center;
+  margin: 3rem;
+}
+
+.top-form h2 {
+  font-size: 1rem;
+  text-align: center;
 }
 
 .email-input {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   text-align: center;
   background-color: #f0f0f0;
+  box-shadow: 0 0 50px rgb(11, 11, 11);
 }
 
-.username-input {
-  padding: 0.5rem 2rem;
-  margin: 0.5rem 0;
+.email-editar {
+  padding: 1rem 4rem;
+  margin: 1rem 0;
 
   text-align: center;
   background-color: #f0f0f0;
@@ -903,7 +915,13 @@ input:checked + .deslizadora:before {
   padding: 1rem;
 }
 
+.formEditData {
+  margin: 0 5rem;
+}
+
 .formEditData h3 {
+  font-family: Roboto Mono;
+  font-size: 1.2rem;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -1056,4 +1074,10 @@ input:checked + .deslizadora:before {
   }
   /*
   /* Home Component */
+  .top-form {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+  }
 }

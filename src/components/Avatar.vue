@@ -69,9 +69,9 @@ watch(path, () => {
     />
 
     <div :style="{ width: size + 'em' }">
-      <label class="button primary block" for="single">
+      <!-- <label class="button primary block" for="single">
         {{ uploading ? "Uploading ..." : "Upload" }}
-      </label>
+      </label> -->
       <input
         style="position: absolute"
         type="file"

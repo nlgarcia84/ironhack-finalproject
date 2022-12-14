@@ -11,8 +11,15 @@
       <!-- Other form elements -->
     </form>
     <h1>
-      Name:
-      {{ useUserStore().profile ? useUserStore().profile.username : "user" }}
+      Your actual data:
+      <h2>
+        Name:
+        {{ useUserStore().profile ? useUserStore().profile.username : "user" }}
+      </h2>
+      <h2>
+        Email:
+        {{ useUserStore().profile ? useUserStore().profile.email : "user" }}
+      </h2>
     </h1>
   </div>
   <div class="formEditData">
@@ -20,12 +27,12 @@
     <form class="form-widget" @submit.prevent="updateProfile">
       <div class="emailForm">
         <label for="email">New Email</label>
-        <input class="email-input" id="email" type="text" v-model="email" />
+        <input class="email-editar" id="email" type="text" v-model="email" />
       </div>
       <div class="usernameForm">
         <label for="username">New Username</label>
         <input
-          class="username-input"
+          class="email-editar"
           id="username"
           type="text"
           v-model="username"
@@ -35,7 +42,7 @@
         <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
       </div>
     </form>
-    <section class="min-height"></section>
+    <section class="min-height min-height-account"></section>
   </div>
   <div>
     <FooterVue />
@@ -103,9 +110,4 @@ onMounted(() => {
 });
 </script>
 
-<style>
-img {
-  width: 200px;
-  border-radius: 50%;
-}
-</style>
+<style></style>
