@@ -9,18 +9,27 @@
           useUserStore().profile ? useUserStore().profile.username : "user"
         }}</router-link>
       </div>
-      <NewTask @getTasks="getTasks" />
-      <h2 class="titulo-tasks-contenedor">Here your taks list:</h2>
-      <div class="tareas-flex">
-        <TaskItem
-          @deleteTask="deleteTask"
-          @toogleTask="toogleTask"
-          @getTasks="getTasks"
-          v-for="task in tasks"
-          :key="task.id"
-          :task="task"
-        />
-      </div>
+      <!-- <div>
+        <transition name="fade">
+          <div v-if="showP" class="cuadrado"></div>
+        </transition>
+        <button @click="showP = !showP">toggle</button>
+      </div> -->
+      <section class="min-height">
+        <NewTask @getTasks="getTasks" />
+        <h2 class="titulo-tasks-contenedor">Here your task list:</h2>
+
+        <div class="tareas-flex">
+          <TaskItem
+            @deleteTask="deleteTask"
+            @toogleTask="toogleTask"
+            @getTasks="getTasks"
+            v-for="task in tasks"
+            :key="task.id"
+            :task="task"
+          />
+        </div>
+      </section>
     </div>
     <FooterVue />
   </div>
@@ -37,6 +46,7 @@ import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import FooterVue from "../components/Footer.vue";
 
+const showP = ref(false);
 // const getUser = computed(() => useUserStore().user);
 const getUser = useUserStore().user;
 
@@ -55,6 +65,14 @@ const getTasks = async () => {
 
 getTasks();
 
+const loadComponent = () => {
+  setTimeout(() => {
+    showP.value = true;
+  }, 1000);
+  console.log("hola");
+};
+loadComponent();
+
 const deleteTask = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
@@ -69,7 +87,26 @@ const toogleTask = async () => {
 toogleTask();
 </script>
 
-<style></style>
+<style>
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: all 3s ease;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: all 3s ease;
+}
+</style>
 
 <!-- 
 **Hints**

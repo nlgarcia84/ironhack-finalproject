@@ -1,50 +1,52 @@
 <template>
-  <div class="contenedor-todos-tasks">
-    <div class="container-tasks">
-      <div class="container-title-description">
-        <h3>{{ task.title }}</h3>
-        <h4>"{{ task.description }}"</h4>
-      </div>
-      <div class="status-task">
-        <label class="botoncito">
+  <transition name="slide-fade">
+    <div v-if="showP" class="contenedor-todos-tasks">
+      <div class="container-tasks">
+        <div class="container-title-description">
+          <h3>{{ task.title }}</h3>
+          <h4>"{{ task.description }}"</h4>
+        </div>
+        <div class="status-task">
+          <label class="botoncito">
+            <input
+              type="checkbox"
+              v-model="task.is_complete"
+              @click="toogleTask"
+            />
+            <span class="deslizadora"></span> </label
+          ><br />
+          <p>
+            {{
+              task.is_complete
+                ? "Good job! Task is now Completed! :)"
+                : "Not completed yet :("
+            }}
+          </p>
+        </div>
+
+        <div class="inputs-edits" v-show="editTask">
           <input
-            type="checkbox"
-            v-model="task.is_complete"
-            @click="toogleTask"
+            class="edit-title"
+            type="text"
+            placeholder="Title"
+            v-model="name"
           />
-          <span class="deslizadora"></span> </label
-        ><br />
-        <p>
-          {{
-            task.is_complete
-              ? "Good job! Task is now Completed! :)"
-              : "Not completed yet :("
-          }}
-        </p>
-      </div>
+          <input
+            class="edit-description"
+            type="text"
+            placeholder="Description"
+            v-model="description"
+          />
+          <button class="saveButton" @click="updateTask">Save</button>
+        </div>
 
-      <div class="inputs-edits" v-show="editTask">
-        <input
-          class="edit-title"
-          type="text"
-          placeholder="Title"
-          v-model="name"
-        />
-        <input
-          class="edit-description"
-          type="text"
-          placeholder="Description"
-          v-model="description"
-        />
-        <button class="saveButton" @click="updateTask">Save</button>
-      </div>
-
-      <div class="container-delete-edit">
-        <button @click="deleteTask" class="buttonDelete">Delete Task</button>
-        <button @click="changeEdit" class="buttonEdit">Edit task</button>
+        <div class="container-delete-edit">
+          <button @click="deleteTask" class="buttonDelete">Delete Task</button>
+          <button @click="changeEdit" class="buttonEdit">Edit task</button>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script setup>
@@ -64,6 +66,15 @@ const taskStore = useTaskStore();
 const props = defineProps({
   task: Object,
 });
+
+const showP = ref(false);
+const loadComponent = () => {
+  setTimeout(() => {
+    showP.value = true;
+  }, 50);
+  console.log("hola");
+};
+loadComponent();
 
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const emit = defineEmits(["deleteTask", "toogleTask", "getTasks"]);

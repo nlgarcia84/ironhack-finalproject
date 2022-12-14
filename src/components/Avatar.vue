@@ -73,7 +73,7 @@ watch(path, () => {
         {{ uploading ? "Uploading ..." : "Upload" }}
       </label>
       <input
-        style="visibility: hidden; position: absolute"
+        style="position: absolute"
         type="file"
         id="single"
         accept="image/*"
