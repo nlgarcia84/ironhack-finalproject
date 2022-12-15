@@ -1,4 +1,9 @@
 <template>
+  <!-- Add icon library -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <Nav />
   <div class="top-form">
     <form
@@ -36,25 +41,41 @@
         alt=""
       />
     </div>
-    <h3>You can change your data in this form:</h3>
+    <button class="buttonload" v-if="showHideLoader">
+      <i class="fa fa-spinner fa-spin"></i>Loading
+    </button>
+    <button class="buttonload" v-else @click="toggleEditForm">
+      Edit Profile
+    </button>
     <form
+      v-if="showEditForm"
       name="elformulario"
       class="form-widget"
       id="form-prevent"
       @submit.prevent="updateProfile"
     >
-      <div class="emailForm">
+      <!-- <div class="emailForm">
         <label for="email">New Email</label>
         <input class="email-editar" id="email" type="text" v-model="email" />
-      </div>
-      <div class="usernameForm">
-        <label for="username">New Username</label>
-        <input
-          class="email-editar"
-          id="username"
-          type="text"
-          v-model="username"
-        />
+      </div> -->
+      <div>
+        <div class="usernameForm">
+          <label for="avatar">New Avatar</label>
+          <input
+            type="file"
+            class="email-editar"
+            accept="image/*"
+            @change="uploadAvatar"
+            :disabled="uploading"
+          />
+          <label for="username">New Username</label>
+          <input
+            class="email-editar"
+            id="username"
+            type="text"
+            v-model="username"
+          />
+        </div>
       </div>
       <div>
         <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
@@ -124,6 +145,8 @@ async function updateProfile() {
   preguntaConfirma();
   loading.value = true;
   showData.value = false;
+  showEditForm.value = !showEditForm.value;
+  // showBotonCarga.value = !showBotonCarga.value;
   console.log(loading.value);
 }
 
@@ -131,7 +154,22 @@ onMounted(() => {
   getProfile();
 });
 
-const showData = ref(false);
+const showData = ref(true);
+const showEditForm = ref(false);
+
+const showHideLoader = ref(false);
+const toggleEditForm = () => {
+  setTimeout(() => {
+    showHideLoader.value = !showHideLoader.value;
+  }, 10);
+  setTimeout(() => {
+    showEditForm.value = true;
+  }, 1000);
+  setTimeout(() => {
+    showHideLoader.value = !showHideLoader.value;
+  }, 1000);
+};
+
 const loading = ref(false);
 const preguntaConfirma = () => {
   if (confirm("Are you sure you want to modify the data?")) {
@@ -146,6 +184,10 @@ const preguntaConfirma = () => {
     }, 8000);
   }
 };
+
+const showBotonCarga = ref(false);
+
+// CODIGO JS DEL AVATAR
 </script>
 
 <style></style>

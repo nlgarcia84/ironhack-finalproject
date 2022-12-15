@@ -3,18 +3,18 @@
     <div v-if="showP" class="container">
       <div class="header">
         <div class="header-description">
-          <h3 class="header-title">Register</h3>
-          <p class="header-subtitle">Start organizing your tasks!</p>
+          <h3 class="header-title2">Register</h3>
+          <p class="header-subtitle2">Start organizing your tasks!</p>
         </div>
       </div>
 
       <form @submit.prevent="signUp" class="form-sign-up">
         <div class="form">
-          <div class="form-input">
+          <div class="form-input-up">
             <label class="input-field-label">E-mail</label>
             <input
               type="email"
-              class="input-field"
+              class="email-input"
               placeholder="example@gmail.com"
               id="email"
               v-model="email"
@@ -25,7 +25,7 @@
             <label class="input-field-label">Username</label>
             <input
               type="text"
-              class="input-field"
+              class="email-input"
               placeholder="Your Username"
               id="username"
               v-model="username"
@@ -47,7 +47,7 @@
             <label class="input-field-label">Password</label>
             <input
               type="password"
-              class="input-field"
+              class="email-input"
               placeholder="**********"
               id="password"
               v-model="password"
@@ -58,14 +58,14 @@
             <label class="input-field-label">Confirm password</label>
             <input
               type="password"
-              class="input-field"
+              class="email-input"
               placeholder="**********"
               id="confirmPassword"
               v-model="confirmPassword"
               required
             />
           </div>
-          <button class="stripe-button" type="submit" @click="click2()">
+          <button class="stripe-button2" type="submit" @click="click2()">
             Sign Up
             <svg class="HoverArrow" width="12" height="12" aria-hidden="true">
               <g fill-rule="evenodd">
@@ -74,7 +74,7 @@
               </g>
             </svg>
           </button>
-          <div class="haveAccount">
+          <div class="haveAccount2">
             Have an account?
             <PersonalRouter
               :route="route"
@@ -84,10 +84,14 @@
           </div>
         </div>
       </form>
-
       <div v-show="errorMsg">{{ errorMsg }}</div>
+
+      <section class="min-height-account-login"></section>
     </div>
   </transition>
+  <div>
+    <FooterVue />
+  </div>
 </template>
 
 <script setup>
@@ -97,6 +101,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import FooterVue from "../components/footer.vue";
 
 // Route Variables
 const route = "/auth/login";

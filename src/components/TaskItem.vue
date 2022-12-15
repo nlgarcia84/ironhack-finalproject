@@ -1,4 +1,10 @@
 <template>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Freehand&display=swap"
+    rel="stylesheet"
+  />
   <transition name="slide-fade">
     <div v-if="showP" class="contenedor-todos-tasks">
       <div class="container-tasks">
@@ -15,7 +21,7 @@
             />
             <span class="deslizadora"></span> </label
           ><br />
-          <p>
+          <p class="texto-completo-incompleto">
             {{
               task.is_complete
                 ? "Good job! Task is now Completed! :)"
@@ -41,8 +47,20 @@
         </div>
 
         <div class="container-delete-edit">
-          <button @click="deleteTask" class="buttonDelete">Delete Task</button>
-          <button @click="changeEdit" class="buttonEdit">Edit task</button>
+          <!-- <button @click="deleteTask" class="buttonDelete">Delete Task</button> -->
+          <img
+            class="edit-icon"
+            src="../images/edit-icon.png"
+            alt="edittask-icon"
+            @click="changeEdit"
+          />
+          <img
+            class="delete-icon"
+            src="../images/delete-icon.png"
+            alt="delete-icon"
+            @click="deleteTask"
+          />
+          <!-- <button @click="changeEdit" class="buttonEdit">Edit task</button> -->
         </div>
       </div>
     </div>

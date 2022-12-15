@@ -1,6 +1,7 @@
 <script setup>
 import { ref, toRefs, watch } from "vue";
 import { supabase } from "../supabase";
+import { useUserStore } from "../stores/user";
 
 const prop = defineProps(["path", "size"]);
 const { path, size } = toRefs(prop);
@@ -22,6 +23,9 @@ const downloadImage = async () => {
   }
 };
 
+// Bring user store to access profile table
+const userStore = useUserStore();
+
 const uploadAvatar = async (evt) => {
   files.value = evt.target.files;
   try {
@@ -38,6 +42,14 @@ const uploadAvatar = async (evt) => {
       .from("profiles")
       .upload(filePath, file);
 
+    let { data } = await supabase
+      .from("userProfile")
+      .update({
+        avatar_url: filePath,
+      })
+      .match({ id: userStore.user.id });
+
+    console.log(filePath);
     if (uploadError) throw uploadError;
     emit("update:path", filePath);
     emit("upload");
@@ -68,11 +80,11 @@ watch(path, () => {
       class="avatar-no-image"
       :style="{ height: size + 'em', width: size + 'em' }"
     />
-
-    <!-- <label class="button primary block" for="single">
-        {{ uploading ? "Uploading ..." : "Upload" }}
-      </label> -->
-    <div>
+    <br />
+    <label class="button primary block" for="single">
+      {{ uploading ? "Uploading ..." : "" }}
+    </label>
+    <!-- <div>
       <input
         type="file"
         class="single"
@@ -80,6 +92,6 @@ watch(path, () => {
         @change="uploadAvatar"
         :disabled="uploading"
       />
-    </div>
+    </div> -->
   </div>
 </template>
