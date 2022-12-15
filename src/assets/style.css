@@ -57,6 +57,7 @@ body {
 /* SignIn Component */
 
 /* SignUp Component */
+
 .avatar-image {
   width: 200px;
   border-radius: 50%;
@@ -65,6 +66,10 @@ body {
 
 .welcome {
   padding: 1rem 0;
+}
+
+.file-upload-button {
+  padding: 1rem;
 }
 
 .container {
@@ -131,6 +136,10 @@ body {
   align-items: center;
 }
 
+.single {
+  width: 130px;
+  margin: 0;
+}
 .email-input {
   padding: 1rem 4rem;
 }
@@ -649,6 +658,7 @@ input:checked + .deslizadora:before {
 }
 
 .container-tasks {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -717,6 +727,9 @@ input:checked + .deslizadora:before {
 }
 
 .buttonDelete {
+  position: absolute;
+  left: 280px;
+  top: 180px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -728,13 +741,16 @@ input:checked + .deslizadora:before {
   color: white;
   width: 5rem;
   height: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 100px;
   margin: 1rem 1rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 0 15px rgb(18, 18, 18);
 }
 
 .buttonEdit {
+  position: absolute;
+  left: -5px;
+  top: 180px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -746,7 +762,7 @@ input:checked + .deslizadora:before {
   color: white;
   width: 5rem;
   height: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 100px;
   margin: 1rem 1rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 0 15px rgb(18, 18, 18);
@@ -834,6 +850,7 @@ input:checked + .deslizadora:before {
 .top-form {
   display: flex;
   flex-direction: column;
+  align-content: center;
   color: white;
   text-align: center;
   margin: 3rem;
@@ -857,6 +874,8 @@ input:checked + .deslizadora:before {
 
   text-align: center;
   background-color: #f0f0f0;
+  border-radius: 10px;
+  border: solid rgb(194, 120, 157) 3px;
 }
 
 .boton-actualizar-datos {
@@ -921,7 +940,8 @@ input:checked + .deslizadora:before {
     align-items: center;
     align-content: center;
     padding: 1rem 1rem;
-    margin: 3rem 1rem;
+    margin: 3rem 2rem;
+    width: 25vw;
     background-image: url("../images/notes.jpg");
     background-size: 35rem;
     background-position: center;
@@ -952,6 +972,47 @@ input:checked + .deslizadora:before {
     }
   }
 
+  .buttonDelete {
+    position: absolute;
+    left: 115px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #d8087b;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+
+  .buttonEdit {
+    position: absolute;
+    left: -5px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #2595f7;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
   .contenedor-todo {
     display: flex;
     flex-direction: row;
@@ -1034,8 +1095,6 @@ input:checked + .deslizadora:before {
   padding: 0;
 }
 
-.upload-avatar {
-}
 /* Sig
 /* SignIn Component */
 
@@ -1121,6 +1180,49 @@ input:checked + .deslizadora:before {
     box-shadow: 0 0 15px rgb(18, 18, 18);
     -webkit-mask-attachment: ;
   }
+
+  .buttonDelete {
+    position: absolute;
+    left: 150px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #d8087b;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+
+  .buttonEdit {
+    position: absolute;
+    left: 10px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #2595f7;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+
   .contenedor-todo {
     display: flex;
     flex-direction: row;
@@ -1152,8 +1254,95 @@ input:checked + .deslizadora:before {
   /* Home Component */
   .top-form {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     color: white;
     text-align: center;
+    text-shadow: 0.1em 0.1em 0.1em black;
+  }
+
+  .avatar-image {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgb(11, 11, 11);
+  }
+  .form-widget {
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+  .transparent {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .buttonDelete {
+    position: absolute;
+    left: 240px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #d8087b;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+
+  .buttonEdit {
+    position: absolute;
+    left: 10px;
+    top: 250px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    background-color: #2595f7;
+    color: white;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    margin: 1rem 1rem;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+
+  .avatar-image {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgb(11, 11, 11);
+  }
+  .form-widget {
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+  }
+  .transparent {
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 }

@@ -37,7 +37,7 @@
 
             <div id="container">
               <button class="stripe-button" @click="click2()">
-                Sign In
+                Sign
                 <svg
                   class="HoverArrow"
                   width="12"

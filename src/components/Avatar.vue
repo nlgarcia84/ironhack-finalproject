@@ -62,20 +62,20 @@ watch(path, () => {
       class="avatar-image"
       :style="{ height: size + 'em', width: size + 'em' }"
     />
+
     <div
       v-else
       class="avatar-no-image"
       :style="{ height: size + 'em', width: size + 'em' }"
     />
 
-    <div :style="{ width: size + 'em' }">
-      <!-- <label class="button primary block" for="single">
+    <!-- <label class="button primary block" for="single">
         {{ uploading ? "Uploading ..." : "Upload" }}
       </label> -->
+    <div>
       <input
-        style="position: absolute"
         type="file"
-        id="single"
+        class="single"
         accept="image/*"
         @change="uploadAvatar"
         :disabled="uploading"

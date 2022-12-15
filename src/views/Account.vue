@@ -22,9 +22,18 @@
       </h2>
     </h1>
   </div>
+  <img
+    v-if="loading"
+    src="https://media.giphy.com/media/8fcK2DQ7Y05SfBk4zn/giphy.gif"
+    alt=""
+  />
   <div class="formEditData">
     <h3>You can change your data in this form:</h3>
-    <form class="form-widget" @submit.prevent="updateProfile">
+    <form
+      name="elformulario"
+      class="form-widget"
+      @submit.prevent="updateProfile"
+    >
       <div class="emailForm">
         <label for="email">New Email</label>
         <input class="email-editar" id="email" type="text" v-model="email" />
@@ -39,7 +48,13 @@
         />
       </div>
       <div>
-        <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
+        <button
+          @click="preguntaConfirma"
+          type="submit"
+          class="boton-actualizar-datos"
+        >
+          SUBMIT
+        </button>
       </div>
     </form>
     <section class="min-height min-height-account"></section>
@@ -108,6 +123,17 @@ async function updateProfile() {
 onMounted(() => {
   getProfile();
 });
+
+const loading = ref(false);
+const preguntaConfirma = () => {
+  if (confirm("Are you sure you want to modify the data?")) {
+    document.elformulario.submit();
+    // setTimeout(() => {
+    //   loading.value = true;
+    // }, 10000);
+    alert("data changed!");
+  }
+};
 </script>
 
 <style></style>
