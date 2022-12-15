@@ -1252,6 +1252,14 @@ input:checked + .deslizadora:before {
   }
   /*
   /* Home Component */
+
+  .loading-gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
   .top-form {
     display: flex;
     align-items: center;

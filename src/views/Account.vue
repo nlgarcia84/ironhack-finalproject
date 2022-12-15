@@ -10,19 +10,24 @@
 
       <!-- Other form elements -->
     </form>
-    <h1>
-      Your actual data:
-      <h2>
-        Name:
-        {{ useUserStore().profile ? useUserStore().profile.username : "user" }}
-      </h2>
-      <h2>
-        Email:
-        {{ useUserStore().profile ? useUserStore().profile.email : "user" }}
-      </h2>
-    </h1>
+    <div class="data-del-form" v-if="showData">
+      <h1>
+        Your actual data:
+        <h2>
+          Name:
+          {{
+            useUserStore().profile ? useUserStore().profile.username : "user"
+          }}
+        </h2>
+        <h2>
+          Email:
+          {{ useUserStore().profile ? useUserStore().profile.email : "user" }}
+        </h2>
+      </h1>
+    </div>
   </div>
   <img
+    class="loading-gif"
     v-if="loading"
     src="https://media.giphy.com/media/8fcK2DQ7Y05SfBk4zn/giphy.gif"
     alt=""
@@ -32,6 +37,7 @@
     <form
       name="elformulario"
       class="form-widget"
+      id="form-prevent"
       @submit.prevent="updateProfile"
     >
       <div class="emailForm">
@@ -48,13 +54,7 @@
         />
       </div>
       <div>
-        <button
-          @click="preguntaConfirma"
-          type="submit"
-          class="boton-actualizar-datos"
-        >
-          SUBMIT
-        </button>
+        <button type="submit" class="boton-actualizar-datos">SUBMIT</button>
       </div>
     </form>
     <section class="min-height min-height-account"></section>
@@ -118,20 +118,29 @@ async function updateProfile() {
   } finally {
     // loading.value = false;
   }
+  preguntaConfirma();
+  loading.value = true;
+  showData.value = false;
+  console.log(loading.value);
 }
 
 onMounted(() => {
   getProfile();
 });
 
+const showData = ref(false);
 const loading = ref(false);
 const preguntaConfirma = () => {
   if (confirm("Are you sure you want to modify the data?")) {
-    document.elformulario.submit();
-    // setTimeout(() => {
-    //   loading.value = true;
-    // }, 10000);
-    alert("data changed!");
+    setTimeout(() => {
+      loading.value = false;
+    }, 6000);
+    setTimeout(() => {
+      showData.value = true;
+    }, 7000);
+    setTimeout(() => {
+      alert("Your data has been changed successfully!");
+    }, 8000);
   }
 };
 </script>
