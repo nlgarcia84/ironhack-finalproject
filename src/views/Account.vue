@@ -69,7 +69,7 @@ import { supabase } from "../supabase";
 import { onMounted, reactive, ref, toRefs } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
-import FooterVue from "../components/Footer.vue";
+import FooterVue from "../components/footer.vue";
 import Avatar from "../components/Avatar.vue";
 
 const userStore = useUserStore();
