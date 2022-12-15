@@ -542,7 +542,7 @@ nav button {
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: 0;
+  margin: 1rem;
 }
 
 input {
@@ -1395,6 +1395,7 @@ buttonDelete {
   body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
+
     animation: gradient 15s ease infinite;
     height: 100vh;
     margin: 0;
@@ -1411,6 +1412,40 @@ buttonDelete {
     100% {
       background-position: 0% 50%;
     }
+  }
+
+  .header-title {
+    font-family: Roboto Mono;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 5rem 0;
+    margin: 3rem 0;
+  }
+
+  .header-title2 {
+    font-family: Roboto Mono;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    margin: 5rem 0;
+  }
+
+  .header-subtitle {
+    font-family: Roboto Mono;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0rem;
+  }
+
+  .header-subtitle2 {
+    font-family: Roboto Mono;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0rem;
   }
 
   .nav-izquierdo-movil {
@@ -1536,7 +1571,6 @@ buttonDelete {
     /* background-image: url("https://img.freepik.com/premium-vector/abstract-white-grey-background_528453-7.jpg?w=2000");
     background-repeat: none;
     background-size: cover; */
-    margin: 14rem 2.5rem;
   }
   /*
   /* Home Component */
@@ -1548,7 +1582,7 @@ buttonDelete {
     align-content: center;
   }
   .email-input {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 8rem;
   }
   .top-form {
     display: flex;
