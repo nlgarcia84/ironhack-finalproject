@@ -29,7 +29,7 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -1040,6 +1040,15 @@ input:checked + .deslizadora:before {
   }
 }
 
+.min-height-account-login {
+  min-height: 15vh;
+  padding: 0;
+}
+
+.min-height-account {
+  min-height: 15vh;
+}
+
 .account-top {
   /* min-height: 100vh; */
   display: flex;
@@ -1049,11 +1058,18 @@ input:checked + .deslizadora:before {
 
 .account-top h1 {
   color: white;
-  padding: 1rem;
 }
 
 .formEditData {
-  margin: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-gif {
+  width: 200px;
+  height: 200px;
 }
 
 .formEditData h3 {
@@ -1229,7 +1245,7 @@ input:checked + .deslizadora:before {
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    margin: 5rem 5rem;
+    margin: 2rem 5rem;
   }
 
   .tareas-flex {
@@ -1267,7 +1283,6 @@ input:checked + .deslizadora:before {
     flex-direction: row;
     color: white;
     text-align: center;
-    text-shadow: 0.1em 0.1em 0.1em black;
   }
 
   .avatar-image {

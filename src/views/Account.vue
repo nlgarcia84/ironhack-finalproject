@@ -26,13 +26,16 @@
       </h1>
     </div>
   </div>
-  <img
-    class="loading-gif"
-    v-if="loading"
-    src="https://media.giphy.com/media/8fcK2DQ7Y05SfBk4zn/giphy.gif"
-    alt=""
-  />
+
   <div class="formEditData">
+    <div>
+      <img
+        class="loading-gif"
+        v-if="loading"
+        src="https://media.giphy.com/media/8fcK2DQ7Y05SfBk4zn/giphy.gif"
+        alt=""
+      />
+    </div>
     <h3>You can change your data in this form:</h3>
     <form
       name="elformulario"

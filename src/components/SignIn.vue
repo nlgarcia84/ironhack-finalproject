@@ -65,8 +65,12 @@
         <div v-show="errorMsg">{{ errorMsg }}</div>
       </div>
       <!-- <div class="imagen-lado-form"></div> -->
+      <section class="min-height-account-login"></section>
     </div>
   </transition>
+  <div>
+    <FooterVue />
+  </div>
 </template>
 
 <script setup>
@@ -76,6 +80,8 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import FooterVue from "../components/footer.vue";
+
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "Sign Up";
