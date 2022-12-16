@@ -9,7 +9,7 @@
     <div v-if="showP" class="contenedor-todos-tasks">
       <div class="container-tasks">
         <div class="container-title-description">
-          <h3>{{ task.title }}</h3>
+          <h3 class="subrayado">{{ task.title }}</h3>
           <h4>"{{ task.description }}"</h4>
         </div>
         <div class="status-task">
