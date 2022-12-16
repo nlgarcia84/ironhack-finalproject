@@ -16,7 +16,6 @@
       <!-- Other form elements -->
     </form>
     <div class="data-del-form" v-if="showData">
-      <h1>{{ userStore.profile.avatar_url }}</h1>
       <img :src="userStore.profile.avatar_url" alt="" />
       <h1>
         Your actual data:
@@ -62,13 +61,6 @@
       </div> -->
       <div>
         <div class="usernameForm">
-          <label for="avatar">New Avatar</label>
-          <input
-            type="file"
-            class="email-editar"
-            accept="image/*"
-            @change="uploadAvatar"
-          />
           <label for="username">New Username</label>
           <input
             class="email-editar"
