@@ -1172,6 +1172,7 @@ buttonDelete {
     border-bottom-right-radius: 0.5rem;
     color: rgb(245, 242, 242);
     line-height: 1rem;
+    padding: 0;
     /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12); */
@@ -1182,7 +1183,8 @@ buttonDelete {
     color: black;
     font-size: 3rem;
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 2rem 0;
+    margin: 0;
   }
 
   .header-subtitle {
@@ -1445,7 +1447,7 @@ buttonDelete {
     font-size: 3rem;
     font-weight: bold;
     padding: 1rem 0;
-    margin: 3rem 0;
+    margin: 4rem 0;
   }
 
   .header-title2 {
