@@ -16,6 +16,8 @@
       <!-- Other form elements -->
     </form>
     <div class="data-del-form" v-if="showData">
+      <h1>{{ userStore.profile.avatar_url }}</h1>
+      <img :src="userStore.profile.avatar_url" alt="" />
       <h1>
         Your actual data:
         <h2>
@@ -66,7 +68,6 @@
             class="email-editar"
             accept="image/*"
             @change="uploadAvatar"
-            :disabled="uploading"
           />
           <label for="username">New Username</label>
           <input
@@ -98,6 +99,7 @@ import Avatar from "../components/Avatar.vue";
 
 const userStore = useUserStore();
 
+const uploading = ref("");
 // Variable para guardar el perfil de supabase
 
 const profile = ref("");
@@ -116,7 +118,6 @@ async function getProfile() {
   email.value = userStore.profile.email;
   avatar_url.value = userStore.profile.avatar_url;
 }
-
 async function updateProfile() {
   try {
     // loading.value = true;
@@ -142,6 +143,7 @@ async function updateProfile() {
   } finally {
     // loading.value = false;
   }
+  uploadAvatar();
   preguntaConfirma();
   loading.value = true;
   showData.value = false;
@@ -186,6 +188,40 @@ const preguntaConfirma = () => {
 };
 
 const showBotonCarga = ref(false);
+
+const files = ref();
+const uploadAvatar = async (evt) => {
+  console.log(uploadAvatar);
+  files.value = evt.target.files;
+  try {
+    uploading.value = true;
+    if (!files.value || files.value.length === 0) {
+      throw new Error("You must select an image to upload.");
+    }
+
+    const file = files.value[0];
+    const fileExt = file.name.split(".").pop();
+    const filePath = `${Math.random()}.${fileExt}`;
+
+    let { error: uploadError } = await supabase.storage
+      .from("profiles")
+      .upload(filePath, file);
+
+    let { data } = await supabase
+      .from("userProfile")
+      .update({
+        avatar_url: filePath,
+      })
+      .match({ id: userStore.user.id });
+
+    console.log(filePath);
+    if (uploadError) throw uploadError;
+  } catch (error) {
+    alert(error.message);
+  } finally {
+    uploading.value = false;
+  }
+};
 
 // CODIGO JS DEL AVATAR
 </script>

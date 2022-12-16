@@ -859,14 +859,16 @@ buttonDelete {
 .edit-title {
   border: solid rgb(41, 41, 42) 1px;
   font-size: 18px;
-  width: 20vw;
+  width: 30vw;
   margin: 1rem;
+  text-align: center;
 }
 
 .edit-description {
-  width: 20vw;
+  width: 30vw;
   border: solid rgb(41, 41, 42) 1px;
   font-size: 18px;
+  text-align: center;
 }
 
 .container-delete-edit {
@@ -921,6 +923,7 @@ buttonDelete {
 }
 
 .saveButton {
+  font-family: Roboto Mono;
   cursor: pointer;
   display: flex;
   flex-direction: column;

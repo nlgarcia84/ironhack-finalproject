@@ -65,7 +65,12 @@
               required
             />
           </div>
-          <button class="stripe-button2" type="submit" @click="click2()">
+          <button
+            class="stripe-button2"
+            v-if="showHidebutton"
+            type="submit"
+            @click="click2()"
+          >
             Sign Up
             <svg class="HoverArrow" width="12" height="12" aria-hidden="true">
               <g fill-rule="evenodd">
@@ -74,6 +79,7 @@
               </g>
             </svg>
           </button>
+
           <div class="haveAccount2">
             Have an account?
             <PersonalRouter
@@ -150,6 +156,18 @@ const loadComponent = () => {
   console.log("hola");
 };
 loadComponent();
+
+const showHidebutton = ref(true);
+const chargeSign = ref(false);
+const chargeSignF = () => {
+  chargeSign.value = !chargeSign.value;
+  showHidebutton.value = !showHidebutton.value;
+  setTimeout(() => {
+    chargeSign.value = !chargeSign.value;
+    //showHidebutton.value = !showHidebutton.value;
+    signIn();
+  }, 3000);
+};
 </script>
 
 <style></style>

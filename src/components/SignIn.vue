@@ -9,7 +9,7 @@
           </div>
         </div>
 
-        <form @submit.prevent="signIn" class="form-sign-in">
+        <form @submit.prevent="chargeSignF" class="form-sign-in">
           <div class="form">
             <div class="form-input">
               <label class="input-field-label">E-mail</label>
@@ -36,7 +36,7 @@
             </div>
 
             <div id="container">
-              <button class="stripe-button">
+              <button class="stripe-button" v-if="showHidebutton">
                 Sign
                 <svg
                   class="HoverArrow"
@@ -50,6 +50,16 @@
                   </g>
                 </svg>
               </button>
+
+              <lottie-player
+                v-if="chargeSign"
+                src="https://lottie.host/92e6d512-851e-4397-a2b0-5c155e722596/CkPjTIGKMD.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+              ></lottie-player>
             </div>
 
             <div class="haveAccount">
@@ -114,9 +124,21 @@ const loadComponent = () => {
   setTimeout(() => {
     showP.value = true;
   }, 50);
-  console.log("hola");
+  // console.log("hola");
 };
 loadComponent();
+
+const showHidebutton = ref(true);
+const chargeSign = ref(false);
+const chargeSignF = () => {
+  chargeSign.value = !chargeSign.value;
+  showHidebutton.value = !showHidebutton.value;
+  setTimeout(() => {
+    chargeSign.value = !chargeSign.value;
+    //showHidebutton.value = !showHidebutton.value;
+    signIn();
+  }, 3000);
+};
 </script>
 
 <style>

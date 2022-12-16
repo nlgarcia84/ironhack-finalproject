@@ -27,6 +27,7 @@ const downloadImage = async () => {
 const userStore = useUserStore();
 
 const uploadAvatar = async (evt) => {
+  console.log(uploadAvatar);
   files.value = evt.target.files;
   try {
     uploading.value = true;
@@ -84,7 +85,7 @@ watch(path, () => {
     <label class="button primary block" for="single">
       {{ uploading ? "Uploading ..." : "" }}
     </label>
-    <!-- <div>
+    <div>
       <input
         type="file"
         class="single"
@@ -92,6 +93,6 @@ watch(path, () => {
         @change="uploadAvatar"
         :disabled="uploading"
       />
-    </div> -->
+    </div>
   </div>
 </template>
