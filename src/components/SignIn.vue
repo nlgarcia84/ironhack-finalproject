@@ -1,10 +1,26 @@
 <template>
+  <link rel=”stylesheet”
+  href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css”
+  /> <link rel=”stylesheet”
+  href=”https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css”
+  integrity=”sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T”
+  crossorigin=”anonymous”>
   <transition name="slide-fade">
     <div v-if="showP" class="contenedor-todo">
       <div class="container">
         <div class="header">
           <div class="header-description">
             <h3 class="header-title">Log In</h3>
+            <lottie-player
+              class="chicoslogin"
+              src="https://lottie.host/656cd3c8-2d73-4a7d-9327-fe38ecb3aaa8/ymxrZpcczu.json"
+              background="transparent"
+              speed="1"
+              style="width: 200px; height: 200px"
+              loop
+              autoplay
+            ></lottie-player>
+
             <p class="header-subtitle">Start organizing your tasks!</p>
           </div>
         </div>
@@ -32,6 +48,7 @@
                 id="password"
                 v-model="password"
                 required
+                name="password"
               />
             </div>
 
