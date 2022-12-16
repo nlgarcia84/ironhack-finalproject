@@ -8,6 +8,7 @@
   />
 
   <h1 class="titulo-nueva-task">Please introduce your task:</h1>
+
   <div v-if="showErrorMessage" class="alert alert-danger" role="alert">
     <p class="error-text">{{ errorMessage }}</p>
   </div>

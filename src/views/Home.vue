@@ -4,17 +4,26 @@
       <Nav />
 
       <div class="content welcome">
-        <h3>Welcome to your task tracker</h3>
-        <router-link to="/account">{{
-          useUserStore().profile ? useUserStore().profile.username : "user"
-        }}</router-link>
-      </div>
-      <!-- <div>
+        <div class="wellcome-body">
+          <h3>Welcome to your task tracker</h3>
+
+          <lottie-player
+            class="chicoslogin"
+            src="https://lottie.host/51579329-b609-4c3d-b5e6-9bde1eeceaa4/aGYMKXWte7.json"
+            background="transparent"
+            speed="1"
+            style="width: 250px; height: 250px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+        <!-- <div>
         <transition name="fade">
           <div v-if="showP" class="cuadrado"></div>
         </transition>
         <button @click="showP = !showP">toggle</button>
       </div> -->
+      </div>
       <section class="min-height">
         <NewTask @getTasks="getTasks" />
         <h2 class="titulo-tasks-contenedor">Here your task list:</h2>
