@@ -36,7 +36,7 @@
             </div>
 
             <div id="container">
-              <button class="stripe-button" @click="click2()">
+              <button class="stripe-button">
                 Sign
                 <svg
                   class="HoverArrow"
@@ -94,7 +94,6 @@ async function signIn() {
   await useUserStore().signIn(email.value, password.value);
   redirect.push({ path: "/" });
 }
-let click2 = () => new Audio("src/sound/click2.mp3").play();
 /*
 const signIn = async () => {
   try {
