@@ -1,6 +1,10 @@
 
 # VERCEL LINK
-[url]vercel-final-project-ji1mej079-nleyvagarcia-gmailcom.vercel.app
+https://ironhack-finalproject-6dygbse01-nleyvagarcia-gmailcom.vercel.app/auth/login
+
+# PRESENTACION
+
+https://slides.com/normanleyva/deck-1b938c/fullscreen
 
 
 # LUNES 5 DE DICIEMBRE
