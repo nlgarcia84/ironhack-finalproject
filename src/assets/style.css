@@ -82,13 +82,18 @@ body {
   padding: 12px 0;
 }
 
+.wellcome-body span {
+  font-weight: bold;
+}
+
 .texto-wellcome-norman {
   display: flex;
   flex-direction: column;
 }
 
 .wellcome-body h3 {
-  font-size: 3rem;
+  font-size: px;
+  padding: 20px;
 }
 
 .button-logout:hover {
@@ -635,11 +640,11 @@ input {
 }
 
 .titulo-nueva-task {
-  text-shadow: 0.1em 0.1em 0.2em black;
   font-size: 20px;
   color: white;
   text-align: center;
   padding: 10px 0;
+  font-family: Roboto Mono;
 }
 
 .content {
@@ -656,7 +661,8 @@ input {
 
 .content h3 {
   margin: 0;
-  font-size: 20px;
+  font-size: 27px;
+  text-align: center;
   font-weight: 300;
   background-color: #ff3cac;
   background-image: linear-gradient(

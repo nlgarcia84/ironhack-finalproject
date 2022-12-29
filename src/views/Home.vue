@@ -5,7 +5,7 @@
 
       <div class="content welcome">
         <div class="wellcome-body">
-          <h3>Start tracking your tasks!</h3>
+          <h3>Start <span>tracking</span> your tasks!</h3>
 
           <lottie-player
             class="chicoslogin"
