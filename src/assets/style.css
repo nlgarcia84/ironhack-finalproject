@@ -71,6 +71,10 @@ body {
     opacity: 1;
   }
 } */
+
+.wraper {
+  padding-bottom: 40px;
+}
 .wellcome-body {
   display: flex;
   flex-direction: column;
@@ -611,7 +615,7 @@ input {
 }
 
 .edit-icon {
-  width: 46px;
+  width: 40px;
 }
 .ok-icon {
   width: 50px;
@@ -619,7 +623,7 @@ input {
 }
 
 .delete-icon {
-  width: 50px;
+  width: 40px;
 }
 .user-bold {
   font-weight: bold;
@@ -809,7 +813,9 @@ input:checked + .deslizadora:before {
   margin: 0;
   text-shadow: 0.1em 0.1em 0.2em black;
 } */
-
+.tareas-flex {
+  margin: 20px 0;
+}
 .container-tasks {
   position: relative;
   display: flex;
@@ -818,10 +824,10 @@ input:checked + .deslizadora:before {
   align-items: center;
   align-content: center;
   font-family: Roboto Mono;
-  padding: 20px 10px;
-  margin: 0 90px;
+  padding: 10px 10px;
+  margin: 30px 20px;
   background-color: white;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
   transform: translatey(0px);
   background-image: url("../images/notes.jpg");
@@ -930,7 +936,7 @@ buttonDelete {
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  padding: 1rem rem;
+  padding: 10px 20px;
 }
 
 .buttonDelete {
@@ -1273,19 +1279,22 @@ buttonDelete {
   }
 
   .container-tasks {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    margin: 3rem 2rem;
+    font-family: Roboto Mono;
+    padding: 10px 10px;
+    margin: 30px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
     background-image: url("../images/notes.jpg");
     background-size: 80rem;
     background-position: center;
-    border-radius: 5%;
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
-    filter: opacity(0.8);
     animation: float 6s ease-in-out infinite;
   }
 
@@ -1372,8 +1381,7 @@ buttonDelete {
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 20px;
   }
 
   .min-height-account-login {
@@ -1567,19 +1575,24 @@ buttonDelete {
 
   /* SignUp Component */
   .container-tasks {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    padding: 1rem 0.5rem;
-    margin: 3rem 1rem;
+    font-family: Roboto Mono;
+    padding: 10px 10px;
+    margin: 30px 20px;
     background-color: white;
-    border-radius: 5%;
-    box-shadow: 0 0 15px rgb(18, 18, 18);
-    -webkit-mask-attachment: ;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+    background-image: url("../images/notes.jpg");
+    background-size: 80rem;
+    background-position: center;
+    animation: float 6s ease-in-out infinite;
   }
-
   .buttonDelete {
     position: absolute;
     left: 150px;
