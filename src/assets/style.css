@@ -615,7 +615,7 @@ input {
 }
 
 .edit-icon {
-  width: 40px;
+  width: 30px;
 }
 .ok-icon {
   width: 50px;
@@ -623,7 +623,7 @@ input {
 }
 
 .delete-icon {
-  width: 40px;
+  width: 30px;
 }
 .user-bold {
   font-weight: bold;
