@@ -14,17 +14,12 @@
   </div>
   <div class="nueva-task">
     <div class="input-field input-new-task">
-      <input
-        type="text"
-        placeholder="Task title"
-        v-model="name"
-        @click="click2()"
-      />
+      <input type="text" placeholder="Title" v-model="name" @click="click2()" />
     </div>
     <div class="input-field">
       <input
         type="text"
-        placeholder="Task description"
+        placeholder="Description"
         v-model="description"
         @click="click2()"
       />

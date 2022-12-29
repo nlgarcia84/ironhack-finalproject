@@ -561,9 +561,6 @@ nav button {
 
 /* ADD NEW TASK */
 
-.input-new-task {
-}
-
 .nueva-task {
   font-display: flex;
   flex-direction: column;
@@ -819,12 +816,12 @@ input:checked + .deslizadora:before {
   align-items: center;
   align-content: center;
   font-family: Freehand;
-  padding: 2rem 3rem;
+  padding: 10px 10px;
+  margin: 0 70px;
   background-color: white;
-  border-radius: 5%;
+  border-radius: 50px;
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
   transform: translatey(0px);
-  margin: 2rem 1rem;
   background-image: url("../images/notes.jpg");
   background-size: 80rem;
   background-position: center;
