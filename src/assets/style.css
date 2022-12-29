@@ -925,13 +925,13 @@ buttonDelete {
 .edit-title {
   border: solid rgb(41, 41, 42) 1px;
   font-size: 18px;
-  width: 30vw;
+  width: 200px;
   margin: 1rem;
   text-align: center;
 }
 
 .edit-description {
-  width: 30vw;
+  width: 200px;
   border: solid rgb(41, 41, 42) 1px;
   font-size: 18px;
   text-align: center;
@@ -997,20 +997,20 @@ buttonDelete {
   align-items: center;
   align-content: center;
   border: 0;
-  background-color: #0693f1;
+  background-color: #da107f;
   color: white;
   font-weight: bold;
   font-size: 1rem;
   border-radius: 50px;
   margin: 2rem 5rem;
   padding: 0.5rem 2rem;
-  box-shadow: 0 0 15px rgb(18, 18, 18);
   transition: 0.5s;
+}
 
-  .saveButton:hover {
-    cursor: pointer;
-    background-position: right center; /* change the direction of the change here */
-  }
+.saveButton:hover {
+  cursor: pointer;
+  background-position: right center;
+  background-color: black;
 }
 
 .caja-add-button {

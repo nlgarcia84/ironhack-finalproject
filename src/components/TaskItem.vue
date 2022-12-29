@@ -37,7 +37,7 @@
             placeholder="Title"
             v-model="name"
           />
-          <input
+          <textarea
             class="edit-description"
             type="text"
             placeholder="Description"
