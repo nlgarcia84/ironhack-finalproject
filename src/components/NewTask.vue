@@ -16,13 +16,13 @@
     <div class="input-field input-new-task">
       <input type="text" placeholder="Title" v-model="name" @click="click2()" />
     </div>
-    <div class="input-field">
-      <input
+    <div class="input-field input-description">
+      <textarea
         type="text"
         placeholder="Description"
         v-model="description"
         @click="click2()"
-      />
+      ></textarea>
       <div class="caja-add-button">
         <button @click="addTask" class="buttonAddTask">ADD NEW</button>
       </div>

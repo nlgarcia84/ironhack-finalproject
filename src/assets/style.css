@@ -346,7 +346,13 @@ button:hover .HoverArrow__linePath {
   text-align: center;
   border: black 1rem;
 }
-
+.input-description textarea {
+  height: 90px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(18, 18, 18);
+  text-align: center;
+}
 .input-field input {
   text-align: center;
   font-size: 15px;
@@ -354,6 +360,7 @@ button:hover .HoverArrow__linePath {
   box-shadow: 0 0 15px rgb(18, 18, 18);
   width: 220px;
   padding: 5px 0;
+  background-color: white;
 }
 
 .placeholders {
@@ -1268,14 +1275,23 @@ buttonDelete {
   .contenedor-todo {
     margin: 10rem 5rem;
   }
+
+  .input-description textarea {
+    width: 320px;
+    height: 90px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(18, 18, 18);
+    text-align: center;
+  }
   .input-field input {
     text-align: center;
     font-size: 15px;
     border-radius: 1rem;
     box-shadow: 0 0 15px rgb(18, 18, 18);
-    width: 220px;
+    width: 320px;
     padding: 5px 0;
-    word-break: break-word;
+    background-color: white;
   }
 
   .container-tasks {
