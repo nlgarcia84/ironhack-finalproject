@@ -667,15 +667,15 @@ input {
   text-decoration: none;
 }
 
-.subrayado {
+/* .subrayado {
   text-transform: uppercase;
   font-weight: 900;
   background: none;
   outline: none;
   border: none;
-}
+} */
 
-.subrayado::after {
+/* .subrayado::after {
   content: "";
   height: 30px;
   width: 100%;
@@ -683,19 +683,20 @@ input {
   display: block;
   border-radius: 50px;
   margin-top: -27px;
-}
+} */
 
 .container-title-description h3 {
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   padding: 0.5rem;
   margin: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  word-break: break-word;
 }
 
 .container-title-description h4 {
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -816,9 +817,9 @@ input:checked + .deslizadora:before {
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  font-family: Freehand;
-  padding: 10px 10px;
-  margin: 0 70px;
+  font-family: Roboto Mono;
+  padding: 20px 10px;
+  margin: 0 90px;
   background-color: white;
   border-radius: 50px;
   box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
@@ -1268,6 +1269,7 @@ buttonDelete {
     box-shadow: 0 0 15px rgb(18, 18, 18);
     width: 220px;
     padding: 5px 0;
+    word-break: break-word;
   }
 
   .container-tasks {
