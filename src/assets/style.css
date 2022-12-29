@@ -607,14 +607,12 @@ input {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 1rem 0;
   border: 0;
   background-color: #f72585;
   color: white;
-  width: 5rem;
-  height: 1.5rem;
+  width: 100px;
+  height: 40px;
   border-radius: 0.5rem;
-  box-shadow: 0 0 15px rgb(18, 18, 18);
 }
 
 .barra-nav-der p {
