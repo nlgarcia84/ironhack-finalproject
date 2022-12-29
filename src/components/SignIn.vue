@@ -73,7 +73,7 @@
                 src="https://lottie.host/92e6d512-851e-4397-a2b0-5c155e722596/CkPjTIGKMD.json"
                 background="transparent"
                 speed="1"
-                style="width: 300px; height: 300px"
+                style="width: 200px; height: 200px"
                 loop
                 autoplay
               ></lottie-player>
