@@ -13,7 +13,7 @@
     <p class="error-text">{{ errorMessage }}</p>
   </div>
   <div class="nueva-task">
-    <div class="input-field">
+    <div class="input-field input-new-task">
       <input
         type="text"
         placeholder="Task title"
@@ -29,7 +29,7 @@
         @click="click2()"
       />
       <div class="caja-add-button">
-        <button @click="addTask" class="buttonAddTask">Add</button>
+        <button @click="addTask" class="buttonAddTask">ADD NEW</button>
       </div>
     </div>
   </div>

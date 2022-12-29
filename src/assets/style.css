@@ -75,7 +75,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 12px 0;
 }
 
 .texto-wellcome-norman {
@@ -211,7 +211,7 @@ body {
 }
 
 .email-input {
-  padding: 0.6rem 3rem;
+  padding: 6rem 3rem;
   margin: 0;
 }
 
@@ -317,18 +317,18 @@ button:hover .HoverArrow__linePath {
   font-weight: bold;
   font-size: 25px;
 }
-
-.input-field,
 .email-input {
+  padding: 10px 30px;
+  border-radius: 20px;
+  width: 100%;
+}
+.input-field {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border-radius: 20px;
   padding: 0 1rem;
-  width: 50vw;
-  height: 5vh;
-  margin: 0;
   /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12); */
@@ -344,11 +344,11 @@ button:hover .HoverArrow__linePath {
 
 .input-field input {
   text-align: center;
-  padding: 1rem 7rem;
-  font-size: 1.2rem;
+  font-size: 15px;
   border-radius: 1rem;
   box-shadow: 0 0 15px rgb(18, 18, 18);
-  width: 90%;
+  width: 220px;
+  padding: 5px 0;
 }
 
 .placeholders {
@@ -561,17 +561,18 @@ nav button {
 
 /* ADD NEW TASK */
 
+.input-new-task {
+}
+
 .nueva-task {
   font-display: flex;
   flex-direction: column;
+
   justify-content: center;
   border-radius: 40%;
 }
 
 .input-field {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
   margin: 1rem;
 }
 
@@ -631,7 +632,7 @@ input {
   font-size: 20px;
   color: white;
   text-align: center;
-  margin: 0;
+  padding: 10px 0;
 }
 
 .content {
@@ -799,16 +800,16 @@ input:checked + .deslizadora:before {
   text-align: center;
   padding: 1rem;
 }
-
+/* 
 .titulo-tasks-contenedor {
   display: flex;
   justify-content: center;
   color: white;
   text-align: center;
-  font-size: 2rem;
+  font-size: 25px;
   margin: 0;
   text-shadow: 0.1em 0.1em 0.2em black;
-}
+} */
 
 .container-tasks {
   position: relative;
@@ -1009,14 +1010,15 @@ buttonDelete {
   background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
   cursor: pointer;
   margin: 10px;
-  padding: 15px 45px;
+  padding: 10px 50px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
+  font-family: Roboto Mono;
   box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  border-radius: 100px;
   display: block;
 }
 
@@ -1186,6 +1188,8 @@ buttonDelete {
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
+    padding: 60px 0;
+    margin: 0;
     border-radius: 10px;
     /* box-shadow: 0 0 15px rgb(18, 18, 18); */
   }
@@ -1261,12 +1265,13 @@ buttonDelete {
   }
   .input-field input {
     text-align: center;
-    padding: 1rem 7rem;
-    font-size: 1.2rem;
+    font-size: 15px;
     border-radius: 1rem;
     box-shadow: 0 0 15px rgb(18, 18, 18);
-    width: 70%;
+    width: 220px;
+    padding: 5px 0;
   }
+
   .container-tasks {
     display: flex;
     flex-direction: column;
@@ -1656,7 +1661,7 @@ buttonDelete {
   .input-field {
     padding: 0;
     margin: 30px 20px;
-    font-size: 1;
+    font-size: 1rem;
   }
   .top-form {
     display: flex;
