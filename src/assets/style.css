@@ -348,15 +348,15 @@ button:hover .HoverArrow__linePath {
 }
 .input-description textarea {
   height: 90px;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 0 20px;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgb(18, 18, 18);
   text-align: center;
 }
 .input-field input {
   text-align: center;
   font-size: 15px;
-  border-radius: 1rem;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgb(18, 18, 18);
   width: 220px;
   padding: 5px 0;
@@ -1690,6 +1690,7 @@ buttonDelete {
   .input-field {
     padding: 0;
     margin: 30px 20px;
+
     font-size: 1rem;
   }
   .top-form {
