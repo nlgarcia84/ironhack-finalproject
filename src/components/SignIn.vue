@@ -16,7 +16,7 @@
               src="https://lottie.host/656cd3c8-2d73-4a7d-9327-fe38ecb3aaa8/ymxrZpcczu.json"
               background="transparent"
               speed="1"
-              style="width: 200px; height: 200px"
+              style="width: 120px; height: 120px"
               loop
               autoplay
             ></lottie-player>
@@ -26,7 +26,7 @@
         </div>
 
         <form @submit.prevent="chargeSignF" class="form-sign-in">
-          <div class="form">
+          <div class="form placeholders">
             <div class="form-input">
               <label class="input-field-label">E-mail</label>
               <input

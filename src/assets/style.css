@@ -73,8 +73,9 @@ body {
 } */
 .wellcome-body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  padding: 20px 0;
 }
 
 .texto-wellcome-norman {
@@ -167,10 +168,10 @@ body {
 
 .header-subtitle {
   font-family: Roboto Mono;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
-  padding-bottom: 0rem;
+  padding: 1rem 0;
 }
 
 .header-subtitle2 {
@@ -210,11 +211,14 @@ body {
 }
 
 .email-input {
-  padding: 0.6rem 4rem;
+  padding: 0.6rem 3rem;
+  margin: 0;
 }
 
+.chicoslogin {
+  padding: 0.5rem 0;
+}
 .stripe-button {
-  margin: 2rem;
   font-family: Roboto Mono;
   border: 0;
   outline: 0;
@@ -223,7 +227,8 @@ body {
   color: #fff;
   font-size: 0.875rem;
   font-weight: 600;
-  padding: 12px 25px;
+  padding: 10px 20px;
+  margin: 12px 0;
   transition-property: background-color, opacity;
 }
 
@@ -320,6 +325,10 @@ button:hover .HoverArrow__linePath {
   align-items: center;
   text-align: center;
   border-radius: 20px;
+  padding: 0 1rem;
+  width: 50vw;
+  height: 5vh;
+  margin: 0;
   /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12); */
@@ -331,7 +340,6 @@ button:hover .HoverArrow__linePath {
   align-items: center;
   text-align: center;
   border: black 1rem;
-  padding: 1rem 1rem;
 }
 
 .input-field input {
@@ -343,14 +351,18 @@ button:hover .HoverArrow__linePath {
   width: 90%;
 }
 
+.placeholders {
+  padding: 10px 0;
+}
+
 .haveAccount {
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   /* background-color: white; */
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
@@ -616,10 +628,9 @@ input {
 
 .titulo-nueva-task {
   text-shadow: 0.1em 0.1em 0.2em black;
-  font-size: 2rem;
+  font-size: 20px;
   color: white;
   text-align: center;
-  padding: 2rem;
   margin: 0;
 }
 
@@ -629,19 +640,25 @@ input {
   justify-content: center;
   align-items: center;
   align-content: center;
-  font-size: 20px;
-  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  background: transparent;
   padding: 0rem 1rem;
-  margin: 0.5rem 0.5rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  box-shadow: 0 0 15px rgb(18, 18, 18);
 }
 
 .content h3 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 300;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  border-radius: 50px;
+  padding: 10px 16px;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -1196,15 +1213,15 @@ buttonDelete {
   .header-title {
     font-family: Roboto Mono;
     color: black;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
-    padding: 2rem 0;
+    padding: 0;
     margin: 0;
   }
 
   .header-subtitle {
     font-family: Roboto Mono;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     margin: 0;
     padding-bottom: 0rem;
@@ -1493,8 +1510,6 @@ buttonDelete {
     font-family: Roboto Mono;
     font-size: 1.2rem;
     font-weight: 400;
-    margin: 0;
-    padding-bottom: 0rem;
   }
 
   .header-subtitle2 {
@@ -1638,8 +1653,10 @@ buttonDelete {
     align-items: center;
     align-content: center;
   }
-  .email-input {
-    padding: 1.5rem 8rem;
+  .input-field {
+    padding: 0;
+    margin: 30px 20px;
+    font-size: 1;
   }
   .top-form {
     display: flex;
